@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/theme-provider";
+import { AppSidebar } from "@/components/AppSideBar";
+import { SidebarTrigger, SidebarProvider } from "@/components/ui/sidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,7 +38,15 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {children}
+            <SidebarProvider>
+              <AppSidebar />
+              <main className="mt-3 w-full">
+                <div className="flex justify-center items-center">
+                  <SidebarTrigger />
+                  {children}
+                </div>
+              </main>
+            </SidebarProvider>
           </ThemeProvider>
         </body>
       </html>
