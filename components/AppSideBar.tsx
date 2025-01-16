@@ -44,7 +44,7 @@ export function AppSidebar() {
   const { user } = useUser();
 
   return (
-    <Sidebar>
+    <Sidebar className="h-screen w-64">
       <SidebarContent>
         <SidebarGroup className="mt-6 py-4">
           <SidebarGroupLabel className="flex flex-col items-center justify-center space-y-3 w-full ">
@@ -65,9 +65,9 @@ export function AppSidebar() {
             />
             <h1>Hey {user?.firstName || "User"}</h1>
           </SidebarGroupLabel>
-          <SidebarGroupContent className="w-full pt-8 space-y-4">
+          <SidebarGroupContent className="w-full space-y-4 ">
             <Card>
-              <CardContent>
+              <CardContent className="pt-6">
                 <SidebarMenu>
                   {items.map((item) => (
                     <SidebarMenuItem key={item.title}>

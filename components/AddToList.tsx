@@ -1,21 +1,14 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
+import { Plus } from "lucide-react";
 
 export default function AddToList() {
   return (
     <Card>
-      <CardContent>
-        <div>
-          {/* Add + sign here */}
-          Add List
-        </div>
+      <CardContent className="flex items-center pt-6">
+        <Plus />
+        Add to List
       </CardContent>
     </Card>
   );
 }
+   
